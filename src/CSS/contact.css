@@ -1,0 +1,321 @@
+.contact-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0e0e0ed5;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-header h2 {
+  font-size: 2.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.contact-header span {
+  color: #a855f7;
+}
+
+.underline {
+  width: 90px;
+  height: 4px;
+  background: #a855f7;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ✅ Main container (Left form + Right video) */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  gap: 50px;
+}
+
+/* ✅ Left Form */
+.contact-form-container {
+  flex: 1;
+  z-index: 2;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 10px #b6b60466;
+}
+
+.contact-form button {
+  background: #a855f7;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  color: #ffffffd7;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #a855f7;
+  transform: scale(1.05);
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* ✅ Right Video */
+.contact-video-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(182, 182, 4, 0.5);
+}
+
+/* ✅ Footer */
+.contact-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.contact-footer span {
+  color: #b6b604;
+}
+
+/* ✅ Responsive */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-video {
+    width: 90%;
+  }
+}
+
+/* =========================
+   CONTACT INFO CARDS SECTION
+   ========================= */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+/* Individual Info Cards */
+.info-card {
+  background: linear-gradient(145deg, #1c1c1c, #292929);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 15px;
+  box-shadow: 
+    0 8px 25px rgba(168, 85, 247, 0.2),
+    inset 0 0 10px rgba(182, 182, 4, 0.05);
+  padding: 25px 20px;
+  width: 360px;
+  text-align: center;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glowing hover effect */
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(168, 85, 247, 0.2),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.info-card:hover::before {
+  opacity: 1;
+}
+
+.info-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 
+    0 15px 35px rgba(168, 85, 247, 0.4),
+    inset 0 0 20px rgba(182, 182, 4, 0.15);
+  border-color: #a855f7;
+}
+
+/* Icon Styling */
+.info-card i {
+  font-size: 2.5rem;
+  color: #a855f7;
+  margin-bottom: 12px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.info-card:hover i {
+  color: #b6b604;
+  transform: rotateY(360deg);
+}
+
+/* Text Styling */
+.info-card h4 {
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.info-card p {
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Glow pulse animation */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px rgba(168, 85, 247, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
+  100% { box-shadow: 0 0 5px rgba(168, 85, 247, 0.4); }
+}
+
+.info-card:hover {
+  animation: glowPulse 1.5s infinite;
+}
+
+/* Responsive cards */
+@media (max-width: 768px) {
+  .info-card {
+    width: 90%;
+  }
+}
+
+/* ===== GLASS FORM DESIGN ===== */
+.glass-form {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px 35px;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: 0.5s ease;
+}
+
+.glass-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(182, 182, 4, 0.4);
+}
+
+.glass-form h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #a855f7, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Input groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  margin-left: 2px;
+}
+
+.glass-form input,
+.glass-form textarea {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 10px;
+  padding: 12px 15px;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.glass-form input:focus,
+.glass-form textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(182, 182, 4, 0.5);
+  outline: none;
+}
+
+/* Neon glowing button */
+.glow-btn {
+  background: linear-gradient(90deg, #a855f7, #5d1ad8);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+}
+
+.glow-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(182, 182, 4, 0.7);
+}
+
+.status {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #a855f7;
+}
