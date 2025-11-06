@@ -50,10 +50,10 @@ function Hero() {
 
         {/* Social Icons */}
         <div className="social-icons">
-          <a href="#">
+          <a href="https://www.instagram.com/itx_suraj_programmer/">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="#">
+          <a href="https://www.facebook.com/suraj.goswami.1420">
             <i className="fab fa-facebook"></i>
           </a>
           <a href="https://github.com/Suraj-1210">

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { hover, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { loadFull } from "tsparticles";
+import "../CSS/about.css";
 
 const About = () => {
   const particlesInit = async (main) => {
@@ -28,71 +29,61 @@ const About = () => {
   ];
 
   return (
-    <section style={styles.section}>
-
-      {/* 🌟 Modern About Section */}
-      <div style={styles.aboutWrapper}>
+    <section className="about-section">
+      <div className="about-wrapper">
+        {/* Left Section */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          style={styles.aboutTextBox}
+          className="about-textbox"
         >
-          <h2 style={styles.aboutTitle}>
-            👋 Hi, I'm <span style={styles.gradientText}>Suraj Goswami</span>
+          <h2 className="about-title">
+            👋 Hi, I'm <span className="gradient-text">Suraj Goswami</span>
           </h2>
-          <p style={styles.aboutText}>
+          <p className="about-text">
             I’m a <b>Full Stack Developer</b> who loves crafting elegant, high-performance web apps with clean UI/UX.
             My passion lies in combining creativity with technology — turning ideas into interactive digital experiences 🚀
           </p>
-          <p style={styles.aboutText}>
+          <p className="about-text">
             I specialize in the <b>MERN Stack</b> and modern design frameworks like <b>Bootstrap</b> and <b>Framer Motion</b>.
             I enjoy building seamless and scalable web solutions that look beautiful and run efficiently.
           </p>
 
           <Link to="/ProjectCard">
-          <motion.button
-            whileHover={{ scale: 1.1, color: "#fff" }}
-            whileTap={{ scale: 0.95 }}
-            style={styles.btn}
-          >
-            View My Projects
-          </motion.button>
+            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} className="about-btn">
+              View My Projects
+            </motion.button>
           </Link>
         </motion.div>
 
+        {/* Right Section */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          style={styles.avatarBox}
+          className="avatar-box"
         >
           <img
             src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif"
             alt="Developer Animation"
-            style={styles.avatar}
+            className="avatar"
           />
         </motion.div>
       </div>
 
-      {/* ✅ Skills Section */}
-      <div style={styles.container}>
-        <h2 style={styles.title}>
-          My <span style={styles.highlight}>Skills</span>
+      {/* Skills Section */}
+      <div className="skills-container">
+        <h2 className="skills-title">
+          My <span className="highlight">Skills</span>
         </h2>
-        <div style={styles.lineWrapper}>
-          <div className="rotating-line" style={styles.rotatingLine}></div>
-        </div>
-        <div style={styles.grid}>
+        <div className="rotating-line"></div>
+
+        <div className="skills-grid">
           {skills.map((skill, index) => (
-            <motion.div
-              whileHover={{ scale: 1.15, rotateY: 10 }}
-              transition={{ duration: 0.3 }}
-              key={index}
-              style={styles.card}
-            >
-              <img src={skill.img} alt={skill.name} style={styles.icon} />
-              <p style={styles.text}>{skill.name}</p>
+            <motion.div whileHover={{ scale: 1.1 }} key={index} className="skill-card">
+              <img src={skill.img} alt={skill.name} className="skill-icon" />
+              <p>{skill.name}</p>
             </motion.div>
           ))}
         </div>
@@ -102,112 +93,3 @@ const About = () => {
 };
 
 export default About;
-
-const styles = {
-  section: {
-    position: "relative",
-    minHeight: "100vh",
-    background: "linear-gradient(135deg, #1e1b29, #3a2b4c)",
-    color: "#fff",
-    overflow: "hidden",
-    padding: "60px 0",
-  },
-  aboutWrapper: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "0px 10%",
-    gap: "60px",
-  },
-  aboutTextBox: {
-    flex: 1,
-    backdropFilter: "blur(10px)",
-    background: "rgba(255, 255, 255, 0.05)",
-    borderRadius: "20px",
-    padding: "40px",
-    boxShadow: "0 8px 30px rgba(168,85,247,0.3)",
-  },
-  aboutTitle: {
-    fontSize: "2.8rem",
-    fontWeight: "bold",
-    marginBottom: "20px",
-  },
-  gradientText: {
-    background: "linear-gradient(90deg, #a855f7, #3b82f6)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  },
-  aboutText: {
-    fontSize: "1.1rem",
-    color: "#ddd",
-    lineHeight: "1.8",
-    marginBottom: "20px",
-  },
-  btn: {
-    background: "linear-gradient(90deg, #a855f7, #3b82f6)",
-    border: "none",
-    color: "#fff",
-    padding: "12px 25px",
-    borderRadius: "30px",
-    cursor: "pointer",
-    fontSize: "1rem",
-    fontWeight: "bold",
-    boxShadow: "0 4px 20px rgba(168,85,247,0.4)",
-  },
-  avatarBox: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-  },
-  avatar: {
-    width: "400px",
-    borderRadius: "20px",
-    boxShadow: "0 10px 30px rgba(59,130,246,0.4)",
-  },
-  container: {
-    textAlign: "center",
-    marginTop: "80px",
-    padding: "0 80px 100px",
-  },
-  title: {
-    fontSize: "2.5rem",
-    fontWeight: "bold",
-    color: "#a855f7",
-    marginBottom: "20px",
-  },
-  highlight: { color: "#3b82f6" },
-  lineWrapper: { display: "flex", justifyContent: "center" },
-  rotatingLine: {
-    width: "180px",
-    height: "5px",
-    borderRadius: "5px",
-    background: "linear-gradient(90deg, #a855f7, #7d4c92, #3b82f6)",
-    animation: "rotateLine 2s linear infinite",
-  },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-    gap: "40px",
-    marginTop: "40px",
-    justifyItems: "center",
-  },
-  card: {
-    width: "150px",
-    height: "140px",
-    background: "#fff",
-    borderRadius: "20px",
-    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.1)",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    cursor: "pointer",
-  },
-  icon: {
-    width: "50px",
-    height: "50px",
-    objectFit: "contain",
-    marginBottom: "10px",
-  },
-  text: { fontWeight: 600, color: "#333" },
-};

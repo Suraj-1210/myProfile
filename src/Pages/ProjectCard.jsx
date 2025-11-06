@@ -16,7 +16,7 @@ const achievements = [
     img: fullStack,
     description:
       "Certified Full Stack Developer — mastering React, Node.js, Express, MongoDB and deployment pipelines.",
-    link: "https://drive.google.com/file/d/1e1rKzMOdiVJyvprYuwXDTN2695_pcslE/view?usp=drivesdk",
+    link: "https://drive.google.com/file/d/1I0a7QuvVEl3IKF1bmbOLJH9FO9Hy1a6B/view?usp=drivesdk",
   },
   {
     id: 2,
@@ -40,8 +40,8 @@ const projects = [
     id: 2,
     title: "My Profile",
     img: ProfileImg,
-    github: "https://github.com/yourname/aliet",
-    live: "https://aliet.vercel.app",
+    github: "https://github.com/Suraj-1210/myProfile.git",
+    live: "https://my-profile-ashen-beta.vercel.app/",
   },
   {
     id: 3,
