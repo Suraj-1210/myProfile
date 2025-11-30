@@ -8,6 +8,7 @@ import SimonSays from "../assests/Simon Says.jpg";
 import TodoList from "../assests/todo-list.jpg";
 import ProfileImg from "../assests/profile image.jpg";
 import HotelProjectImg from "../assests/hotelProject.jpg";
+import Gemini from "../assests/Gemini Certificate.jpeg";
 
 const achievements = [
   {
@@ -25,6 +26,14 @@ const achievements = [
     description:
       "Completed professional MERN stack development training focusing on modern web application building.",
     link: "https://drive.google.com/file/d/1ksLO5aKwV-yFvJg7dmhYw4v6wj8DUt7I/view?usp=drivesdk",
+  },
+   {
+    id: 3,
+    title: "Google Gemini Certificate",
+    img: Gemini,
+    description:
+      "Completed professional MERN stack development training focusing on modern web application building.",
+    link: "https://drive.google.com/file/d/1wGUaG0Reno29TxgvEp7yEDa6_W6E1Zx0/view?usp=drivesdk",
   },
 ];
 
